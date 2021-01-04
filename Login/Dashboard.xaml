@@ -1,0 +1,75 @@
+﻿<Window x:Class="Login.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Login"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FFFFFF"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Dashboard" Height="550" Width="800" WindowStyle="None" AllowsTransparency="True">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="35"/>
+    </WindowChrome.WindowChrome>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="Topbar"  Height="35" />
+            <RowDefinition x:Name="Image"  Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="Menu"  Width="Auto" />
+            <ColumnDefinition x:Name="Pic"  Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid VerticalAlignment="Top" Background="#212121" Grid.Row="0" Grid.ColumnSpan="2">
+            <DockPanel>
+
+                <TextBlock
+                    Name="Logo"
+                    DockPanel.Dock="Left"
+                    Foreground="#FFFFFF"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Margin="10 10 0 10">
+                   <Underline>Dashb</Underline>oard
+                </TextBlock>
+                <StackPanel WindowChrome.IsHitTestVisibleInChrome="True" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal" DockPanel.Dock="Right">
+                    <fa:ImageAwesome Icon="Circle" VerticalAlignment="Center" HorizontalAlignment="Center" Width="10" Height="10" Name="Minimize" Foreground="#FFEB3B" Margin="0 10 10 10"></fa:ImageAwesome>
+                    <fa:ImageAwesome Icon="Circle" VerticalAlignment="Center" HorizontalAlignment="Center" Width="10" Height="10" Name="Maximize" Foreground="#8BC34A" Margin="0 10 10 10"></fa:ImageAwesome>
+                    <fa:ImageAwesome Icon="Circle" VerticalAlignment="Center" HorizontalAlignment="Center" Width="10" Height="10" Name="Close" Foreground="#FF5252" Margin="0 10 10 10"></fa:ImageAwesome>
+                </StackPanel>
+            </DockPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" Background="#212121">
+            <StackPanel Orientation="Vertical" Width="Auto" Margin="0,5,0,0">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="15,15,15,15" Foreground="#ffffff">Options</TextBlock>
+
+                <StackPanel Orientation="Horizontal" Background="#313131" Margin="10">
+                    <fa:ImageAwesome Icon="Plus" VerticalAlignment="Center" HorizontalAlignment="Center" Width="20" Height="20" Name="AddAccIMG" Foreground="#8BC34A" Margin="15,15,15,15"></fa:ImageAwesome>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="15,15,15,15" Foreground="#ffffff">Add Account</TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Background="#313131" Margin="10">
+                    <fa:ImageAwesome Icon="Edit" VerticalAlignment="Center" HorizontalAlignment="Center" Width="20" Height="20" Name="Editimg" Foreground="#FF5722" Margin="15,15,15,15"></fa:ImageAwesome>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="15,15,15,15" Foreground="#ffffff">Edit Account</TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Background="#313131" Margin="10">
+                    <fa:ImageAwesome Icon="Trash" VerticalAlignment="Center" HorizontalAlignment="Center" Width="20" Height="20" Name="DeleteImg" Foreground="#F44336" Margin="15,15,15,15"></fa:ImageAwesome>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="15,15,15,15" Foreground="#ffffff">Delete Account</TextBlock>
+                </StackPanel>
+
+
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</Window>

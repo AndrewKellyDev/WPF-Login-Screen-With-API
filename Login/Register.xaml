@@ -1,0 +1,99 @@
+﻿<Window x:Class="Login.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Login"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="#FFFFFF"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Register" Height="550" Width="800" WindowStyle="None" AllowsTransparency="True">
+    <WindowChrome.WindowChrome>
+            <WindowChrome CaptionHeight="35"/>
+        </WindowChrome.WindowChrome>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="Topbar"  Height="35" />
+                <RowDefinition x:Name="Image"  Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="Login"  Width="*" />
+                <ColumnDefinition x:Name="Pic"  Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid VerticalAlignment="Top" Background="#212121" Grid.Row="0" Grid.ColumnSpan="2">
+                <DockPanel>
+
+                    <TextBlock
+                    Name="Logo"
+                    DockPanel.Dock="Left"
+                    Foreground="#FFFFFF"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Margin="10 10 0 10">
+                   <Underline>Regis</Underline>ter Screen
+                    </TextBlock>
+                    <StackPanel WindowChrome.IsHitTestVisibleInChrome="True" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal" DockPanel.Dock="Right">
+                        <fa:ImageAwesome Icon="Circle" VerticalAlignment="Center" HorizontalAlignment="Center" Width="10" Height="10" Name="Minimize" Foreground="#FFEB3B" Margin="0 10 10 10"></fa:ImageAwesome>
+                        <fa:ImageAwesome Icon="Circle" VerticalAlignment="Center" HorizontalAlignment="Center" Width="10" Height="10" Name="Maximize" Foreground="#8BC34A" Margin="0 10 10 10"></fa:ImageAwesome>
+                        <fa:ImageAwesome Icon="Circle" VerticalAlignment="Center" HorizontalAlignment="Center" Width="10" Height="10" Name="Close" Foreground="#FF5252" Margin="0 10 10 10"></fa:ImageAwesome>
+                    </StackPanel>
+                </DockPanel>
+            </Grid>
+
+            <Image Source="C:\Users\andre\Desktop\C# Projects\Login Screen\Login\Login\Images\ps5.jpg" Grid.Column="1" Grid.Row="1" Stretch="UniformToFill"/>
+
+
+            <Grid Grid.Column="0" Grid.Row="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Register Your Account." TextAlignment="Left" FontSize="35" Margin="20,20,0,0" Style="{StaticResource MaterialDesignHeadline1TextBlock}"></TextBlock>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center">
+                    <fa:ImageAwesome Icon="Google" VerticalAlignment="Center" HorizontalAlignment="Center" Width="20" Height="20" Name="Google" Foreground="#212121" Margin="20 20 20 20"></fa:ImageAwesome>
+                    <fa:ImageAwesome Icon="Github" VerticalAlignment="Center" HorizontalAlignment="Center" Width="20" Height="20" Name="Github" Foreground="#212121" Margin="0 20 20 20"></fa:ImageAwesome>
+                    <fa:ImageAwesome Icon="Twitter" VerticalAlignment="Center" HorizontalAlignment="Center" Width="20" Height="20" Name="Twitter" Foreground="#212121" Margin="0 20 20 20"></fa:ImageAwesome>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="2" Margin="0">
+                <TextBox Margin="20"
+                 Name="NameInputBox"
+                 materialDesign:HintAssist.Hint="Name"
+                 materialDesign:HintAssist.Foreground="#03A9F4"
+                 materialDesign:TextFieldAssist.UnderlineBrush="#03A9F4"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+                <TextBox Margin="20"
+                 Name="EmailInputBox"
+                 materialDesign:HintAssist.Hint="Email"
+                 materialDesign:HintAssist.Foreground="#03A9F4"
+                 materialDesign:TextFieldAssist.UnderlineBrush="#03A9F4"
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <PasswordBox Margin="20"
+                 Name="PasswordInputBox"
+                 materialDesign:HintAssist.Hint="Password"
+                 materialDesign:HintAssist.Foreground="#03A9F4"
+                 materialDesign:TextFieldAssist.UnderlineBrush="#03A9F4"
+                 Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+
+                 <TextBlock TextAlignment="Center" Margin="10" Foreground="#FF5252" Name="ErrorMessage"></TextBlock>
+
+                    <Button Margin="20" Style="{DynamicResource MaterialDesignRaisedButton}" Background="#03A9F4" materialDesign:ButtonAssist.CornerRadius="8" Foreground="#ffffff" BorderBrush="Transparent" Click="Register_ButtonClick">Register</Button>
+                </StackPanel>
+
+            </Grid>
+
+        </Grid>
+</Window>
